@@ -20,11 +20,22 @@
   </style>
   <body>
     <div class="wrapper">
-        <h1>HAPPY DAY OF WORK JAWANG</h1>
+        <h1 id="jawang"></h1>
         <p><img src="jawang.jpg" alt=""></p>
     
     </div>
     <script src="javascripts/scale.fix.js"></script>
+    <script>
+      function getNumberWithOrdinal(n) {
+        var s=["th","st","nd","rd"],
+        v=n%100;
+        return n+(s[(v-20)%10]||s[v]||s[0]);
+      }
+      var jawang = new Date(2019, 0, 14); 
+      var diff = Math.ceil((now - jawang) / (1000 * 60 * 60 * 24)); 
+      var jawang_string = 'HAPPY ' + getNumberWithOrdinal(diff) + ' DAY OF WORK JAWANG';
+      document.getElementById("jawang").innerHTML = jawang_string;
+    </script>
     
   </body>
 </html>
